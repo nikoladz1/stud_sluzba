@@ -6,7 +6,7 @@ package studsluz;
 
 /**
  *
- * @author dzeno
+ * @author dzeno studsluz/src/Admin.json
  */
 public class Admin extends Person{
     private String username;
