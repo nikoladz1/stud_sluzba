@@ -97,6 +97,7 @@ public class Studsluz {
         System.out.println("7. Pregledaj Predmete");
         System.out.println("8. Izmeni Informacije o Predmetu");
         System.out.println("9. BLA BLA BLA");
+        System.out.println("10. BLA");
         
         
         
