@@ -14,7 +14,11 @@ public class Studsluz {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        GreetMsg msg = new GreetMsg();
+        msg.WelcomeMessage();
+        int ChosenOption;
+        
+        
     }
     
 }
