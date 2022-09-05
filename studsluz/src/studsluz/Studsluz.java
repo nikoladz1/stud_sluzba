@@ -29,12 +29,13 @@ public class Studsluz {
         while(chosenOption != 0 && chosenOption != 1){
             Scanner scann = new Scanner(System.in);
             try{
+                System.out.print("Unesite opciju:");
                 chosenOption = Integer.parseInt(scann.next()) ;
                 
             }
             
             catch(NumberFormatException e){
-                System.out.println("Uneli ste nedozvoljeni karakter, pokusajte ponovo.");
+                System.out.println("Uneli ste nedozvoljeni karakter, pokusajte ponovo.\n");
                 continue;
             }
       
@@ -43,7 +44,7 @@ public class Studsluz {
         }
         
         if(chosenOption ==0){
-            System.out.println("Izlazak iz programa");
+            System.out.println("Izlazak iz programa\n");
             System.exit(0);
         }
         
@@ -57,11 +58,14 @@ public class Studsluz {
         
         while(checkAdmin){
             Scanner scann = new Scanner(System.in);
+            System.out.print("Unesite username:");
             String username = scann.next();
             if(username.equals("0")){
                 System.out.println("Izlazi iz programa...");
                 System.exit(0);
             }
+            
+            System.out.print("Unesite password:");
             String password = scann.next();
             
             if(password.equals("0")){
@@ -82,24 +86,24 @@ public class Studsluz {
             if(checkAdmin == true)System.out.println("Niste dobro uneli username ili password");
             
         }
-
-        System.out.print("\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("Uspesno ste se ulogovali !!");
-        System.out.println("Dobrodosli u admin panel");
-        System.out.println("Izaberite jednu od opcija:");
+        ///Admin panel opcije;
+        boolean check = true;
+        String option = "";
+        msg.OptionMessage();
         
-        System.out.println("1. Pregledaj sve studente");
-        System.out.println("2. Dodaj Studenta");
-        System.out.println("3. Izbrisi Studenta");
-        System.out.println("4. Izmeni informacije o Studentu");
-        System.out.println("5. Dodaj Predmet Studentu");
-        System.out.println("6. Izbrisi Predmet Studentu");
-        System.out.println("7. Pregledaj Predmete");
-        System.out.println("8. Izmeni Informacije o Predmetu");
-        System.out.println("9. BLA BLA BLA");
-        System.out.println("10. BLA");
+        while(check){
+            
+            Scanner scann = new Scanner(System.in);
+            option = scann.next();
+            
+            if(option.equals("0") || option.equals("1") || option.equals("2") || option.equals("3") || option.equals("3")
+                   ||  option.equals("5")|| option.equals("6") || option.equals("7")) check = false;
+            
+            if(check == true)System.out.println("Nije uneta postojeca opcija");
+            
+        }
         
-        
+        if(option.equals("0"))System.exit(0);
         
         
     }

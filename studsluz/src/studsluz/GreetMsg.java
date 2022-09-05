@@ -21,10 +21,25 @@ public class GreetMsg extends AGreetMsg implements IGreetMsg  {
     //Ako izabere opciju 1 treba sledi ova metoda:
     @Override
     public void LogInMsg(){
-        System.out.println("Unesite username i password:");
-        System.out.println("Ako zelite da izadjete unesite 0 umesto username ili passworda");
+        System.out.println("\n\nUnesite username i password:");
+        System.out.println("Ako zelite da izadjete unesite 0 umesto username ili passworda\n");
     }
     
     
+    public void OptionMessage(){
     
+        System.out.print("\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Uspesno ste se ulogovali !!");
+        System.out.println("Dobrodosli u admin panel");
+        System.out.println("Izaberite jednu od opcija:");
+        System.out.println("\n\n");
+        System.out.println("1. Pregledaj sve studente");
+        System.out.println("2. Dodaj Studenta");
+        System.out.println("3. Izbrisi Studenta");
+        System.out.println("4. Izmeni informacije o Studentu");
+        System.out.println("5. Dodaj Predmet Studentu");
+        System.out.println("6. Izbrisi Predmet Studentu");
+        System.out.println("7. Pregledaj Predmete\n");
+        System.out.println("0. Izadji iz programa\n\n");
+    }
 }
