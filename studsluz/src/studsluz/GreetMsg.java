@@ -39,7 +39,7 @@ public class GreetMsg extends AGreetMsg implements IGreetMsg  {
         System.out.println("4. Izmeni informacije o Studentu");
         System.out.println("5. Dodaj Predmet Studentu");
         System.out.println("6. Izbrisi Predmet Studentu");
-        System.out.println("7. Pregledaj Predmete\n");
+        
         System.out.println("0. Izadji iz programa\n\n");
     }
 }

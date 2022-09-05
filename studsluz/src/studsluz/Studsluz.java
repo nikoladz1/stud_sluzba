@@ -20,6 +20,7 @@ public class Studsluz {
     public static void main(String[] args) {
         //citaj Json
         ArrayList<Admin> admins = ReadJson.ReadAdmin();
+        ArrayList<Student> students = ReadJson.ReadStudent();
         
         GreetMsg msg = new GreetMsg();
         msg.WelcomeMessage();
@@ -104,6 +105,15 @@ public class Studsluz {
         }
         
         if(option.equals("0"))System.exit(0);
+        
+        if(option.equals("1")){
+            
+            for (Student s : students) {
+                s.toString();
+            }
+        
+        }
+        
         
         
     }

@@ -1,0 +1,36 @@
+
+[
+  {
+    "id": 1,
+    "yearOfBirth": 1994,
+    "year": 2020,
+    "course": "RT",
+    "index": "RT-1/20",
+    "listOfSubjects": [ "OOP", "SKI", "MKR", "OBJ1" ],
+    "name": "Nikola",
+    "surname": "Dzenopoljac",
+    "email": "nikola@gmail.com"
+  },
+  {
+    "id": 2,
+    "yearOfBirth": 1994,
+    "year": 2020,
+    "course": "RT",
+    "index": "RT-2/20",
+    "listOfSubjects": [ "OOP", "SKI", "MKR", "OBJ1" ],
+    "name": "Bojan",
+    "surname": "Stevovic",
+    "email": "bojan@gmail.com"
+  },
+  {
+    "id": 3,
+    "yearOfBirth": 1999,
+    "year": 2020,
+    "course": "NRT",
+    "index": "NRT-3/20",
+    "listOfSubjects": [ "OOP", "SKI", "MKR", "OBJ1" ],
+    "name": "Ana",
+    "surname": "Jovic",
+    "email": "ana@gmail.com"
+  }
+]
