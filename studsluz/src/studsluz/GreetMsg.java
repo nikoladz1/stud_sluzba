@@ -28,10 +28,7 @@ public class GreetMsg extends AGreetMsg implements IGreetMsg  {
     
     public void OptionMessage(){
     
-        System.out.print("\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("Uspesno ste se ulogovali !!");
-        System.out.println("Dobrodosli u admin panel");
-        System.out.println("Izaberite jednu od opcija:");
+
         System.out.println("\n\n");
         System.out.println("1. Pregledaj sve studente");
         System.out.println("2. Dodaj Studenta");

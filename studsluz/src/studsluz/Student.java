@@ -82,7 +82,7 @@ public class Student extends Person{
     public String toString() {
         String listaPredmeta = "";
         for(String s : listOfSubjects)
-            listaPredmeta = "\t" +s+"\n";
+            listaPredmeta += "\t" +s+"\n";
         return "id: " + id +"\n"+ super.toString() + "\nGodina rodjenja: " + yearOfBirth + "\nGodina Upisa: " + "\nSmer: " + course + 
                 "\nIndex: " + index + "\n\nPredmeti:\n" + listaPredmeta;
     }

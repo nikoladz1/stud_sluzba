@@ -54,27 +54,27 @@ public class ReadJson {
          
             try {
         
-		JSONArray jsonNalozi=(JSONArray) new JSONParser().parse(new FileReader("Students.json"));
-		for(Object o: jsonNalozi){
+		JSONArray jsonStudenti=(JSONArray) new JSONParser().parse(new FileReader("src\\Students.json"));
+		for(Object o: jsonStudenti){
 				JSONObject obj=(JSONObject) o;
 				
-				String id =obj.get("id").toString();
-                                String yearOfBirth =obj.get("yearOfBirth").toString();
+				int id =Integer.parseInt(obj.get("id").toString());
+                                int yearOfBirth =Integer.parseInt(obj.get("yearOfBirth").toString());
 				String year=obj.get("year").toString();
                                 String course=obj.get("course").toString();
                                 String index=obj.get("index").toString();
                                 
-                                JSONArray jsonPredmeti=(JSONArray) obj.get("listOfSubjects");
-                                ArrayList<String> predmeti =new ArrayList<>();
-                                for (Object sub : jsonPredmeti){ 
-                                    predmeti.add(sub.toString());
-                                }
+                               JSONArray jsonPredmeti=(JSONArray) obj.get("listOfSubjects");
+                                ArrayList<String> predmeti=new ArrayList<>();
+                               for (Object tel : jsonPredmeti) 
+                                    predmeti.add(tel.toString());
+            
                                 String name=obj.get("name").toString();
                                 String surname=obj.get("surname").toString();
                                 String email=obj.get("email").toString();
 				
 				
-				studenti.add(new Student(Integer.parseInt(id),Integer.parseInt(yearOfBirth), year, course, index, predmeti, name, surname, email));
+				studenti.add(new Student(id,yearOfBirth, year, course, index, predmeti, name, surname, email));
         	}
             } 
           catch (FileNotFoundException e) {
