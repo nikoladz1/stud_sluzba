@@ -30,6 +30,28 @@ public class Student extends Person{
         this.listOfSubjects = listOfSubjects;
     }
 
+    public Student(int id, int yearOfBirth, String year, String course, String index, String name, String surname, String email,String jedanPredmet) {
+        super(name, surname, email);
+        this.id = id;
+        this.yearOfBirth = yearOfBirth;
+        this.year = year;
+        this.course = course;
+        this.index = index;
+        listOfSubjects = new ArrayList<>();
+        listOfSubjects.add(jedanPredmet);
+    }
+
+    public Student(int id, int yearOfBirth, String year, String course, String index) {
+        this.id = id;
+        this.yearOfBirth = yearOfBirth;
+        this.year = year;
+        this.course = course;
+        this.index = index;
+        
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -83,7 +105,7 @@ public class Student extends Person{
         String listaPredmeta = "";
         for(String s : listOfSubjects)
             listaPredmeta += "\t" +s+"\n";
-        return "id: " + id +"\n"+ super.toString() + "\nGodina rodjenja: " + yearOfBirth + "\nGodina Upisa: " + "\nSmer: " + course + 
+        return "id: " + id +"\n"+ super.toString() + "\nGodina rodjenja: " + yearOfBirth + "\nGodina Upisa: " +year+ "\nSmer: " + course + 
                 "\nIndex: " + index + "\n\nPredmeti:\n" + listaPredmeta;
     }
 
