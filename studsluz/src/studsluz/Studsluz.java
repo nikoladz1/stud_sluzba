@@ -113,7 +113,10 @@ public class Studsluz {
 
             }
 
-            if(option.equals("0"))System.exit(0);
+            if(option.equals("0")){
+                WriteJson.WriteStudents(students);
+                System.exit(0);
+            }
             
             //Prikaz studenata
             if(option.equals("1")){
@@ -398,6 +401,7 @@ public class Studsluz {
             
             }
             
+            //DODAVANJE PREDMETA
             if(option.equals("5")){
                 
                 int id = -1;
@@ -451,7 +455,7 @@ public class Studsluz {
             
             }
             
-            
+            //brisanje predmeta
             if(option.equals("6")){
                 
                 int id = -1;
@@ -505,7 +509,10 @@ public class Studsluz {
             
             }
             
-            
+            if(option.equals("7")) {
+                WriteJson.WriteStudents(students);
+                System.out.println("Sve izmene su uspesno sacuvane");
+            }
 
 
         }

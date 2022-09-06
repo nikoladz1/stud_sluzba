@@ -38,7 +38,7 @@ public class WriteJson {
             jsonStudent.add(obj);
         }
         try {
-            pw=new PrintWriter("Students.json");
+            pw=new PrintWriter("src\\Students.json");
             pw.write(jsonStudent.toJSONString());
         } catch (FileNotFoundException ex) {
             System.out.println("Greska prilikom upisa!\n"+ex.getMessage());
