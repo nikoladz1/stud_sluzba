@@ -5,6 +5,7 @@
 package studsluz;
 
 import java.util.ArrayList;
+
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -105,7 +106,7 @@ public class Studsluz {
                 Scanner scann = new Scanner(System.in);
                 option = scann.next();
 
-                if(option.equals("0") || option.equals("1") || option.equals("2") || option.equals("3") || option.equals("3")
+                if(option.equals("0") || option.equals("1") || option.equals("2") || option.equals("3") || option.equals("4")
                        ||  option.equals("5")|| option.equals("6") || option.equals("7")) check = false;
 
                 if(check == true)System.out.println("Nije uneta postojeca opcija");
@@ -288,8 +289,12 @@ public class Studsluz {
                     
                     for (Student s: students) {
                         if (id == s.getId()) {
-                            
+                            checkid=false;
                         }
+                    }
+                    
+                    if (checkid) {
+                        System.out.println("Ne postoji Student sa tim ID-om");
                     }
                     
                     
@@ -362,17 +367,29 @@ public class Studsluz {
                 proveraZaStudenta = true;
                 
                 while(proveraZaStudenta){
-                System.out.print("email: ");
-                email = scann.next();
-                if(email.contains("@"))proveraZaStudenta = false;
-                else System.out.println("Ne valja email");
+                    System.out.print("email: ");
+                    email = scann.next();
+                    if(email.contains("@"))proveraZaStudenta = false;
+                    else System.out.println("Ne valja email");
             }
                 
-                System.out.print("Naziv jednog predmeta:  ");
-                predmet = scann.next();
+                
                 
                 String god = year.substring(2);
                 index = course+"-"+id+"/"+ god;
+                
+                for (Student s: students) {
+                    if (id==s.getId()) {
+                        s.setName(name);
+                        s.setSurname(surname);
+                        s.setYear(year);
+                        s.setYearOfBirth(Integer.parseInt(yearOfBirth));
+                        s.setCourse(course);
+                        s.setEmail(email);
+                        s.setIndex(index);
+                        
+                    }
+                }
                 
                 
                 
@@ -380,6 +397,115 @@ public class Studsluz {
                 
             
             }
+            
+            if(option.equals("5")){
+                
+                int id = -1;
+                
+                System.out.println("Unesite ID studenta kome zelite da dodate predmet");
+                boolean checkid=true;
+                while(checkid){
+                    Scanner unos = new Scanner(System.in);
+                    System.out.println("ID: ");
+                    String ids = unos.next();
+                    
+                    try{
+                        id = Integer.parseInt(ids);
+                    }catch(NumberFormatException e){
+                        System.out.println("Niste uneli dobar broj");
+                        
+                    }
+                    
+                    for (Student s: students) {
+                        if (id == s.getId()) {
+                            checkid=false;
+                        }
+                    }
+                    
+                    if (checkid) {
+                        System.out.println("Ne postoji Student sa tim ID-om");
+                    }
+                    
+                    
+                }
+                
+                System.out.println("Unesite naziv Predmeta: ");
+                String jedanPr ="";
+                boolean boo = false;
+                while(boo==false){
+                    
+                    System.out.print("Predmet: ");
+                    Scanner unoss = new Scanner(System.in);
+                    jedanPr = unoss.next();
+                    
+                    for(Student s: students){
+                        if(s.getId()==id){
+                           boo = s.addSubject(jedanPr);
+                            System.out.println("Predmet Dodat");
+                        }
+                    }
+                    
+                }
+                
+                option = "";
+            
+            }
+            
+            
+            if(option.equals("6")){
+                
+                int id = -1;
+                
+                System.out.println("Unesite ID studenta kome zelite da izbrisete predmet");
+                boolean checkid=true;
+                while(checkid){
+                    Scanner unos = new Scanner(System.in);
+                    System.out.println("ID: ");
+                    String ids = unos.next();
+                    
+                    try{
+                        id = Integer.parseInt(ids);
+                    }catch(NumberFormatException e){
+                        System.out.println("Niste uneli dobar broj");
+                        
+                    }
+                    
+                    for (Student s: students) {
+                        if (id == s.getId()) {
+                            checkid=false;
+                        }
+                    }
+                    
+                    if (checkid) {
+                        System.out.println("Ne postoji Student sa tim ID-om");
+                    }
+                    
+                    
+                }
+                
+                System.out.println("Unesite naziv Predmeta koji zelite da obrisete: ");
+                String jedanPr ="";
+                boolean boo = false;
+                while(boo==false){
+                    
+                    System.out.print("Predmet: ");
+                    Scanner unoss = new Scanner(System.in);
+                    jedanPr = unoss.next();
+                    
+                    for(Student s: students){
+                        if(s.getId()==id){
+                           boo = s.RemoveSubject(jedanPr);
+                            
+                        }
+                    }
+                    
+                }
+                
+                option = "";
+            
+            }
+            
+            
 
 
         }

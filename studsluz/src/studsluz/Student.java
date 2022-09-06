@@ -108,6 +108,45 @@ public class Student extends Person{
         return "id: " + id +"\n"+ super.toString() + "\nGodina rodjenja: " + yearOfBirth + "\nGodina Upisa: " +year+ "\nSmer: " + course + 
                 "\nIndex: " + index + "\n\nPredmeti:\n" + listaPredmeta;
     }
+    
+    public boolean addSubject(String predmet){
+        for (String list : listOfSubjects) {
+            if (predmet.equals(list)) {
+                return false;
+            }
+            
+        }
+        
+        listOfSubjects.add(predmet);
+        return true;
+    }
+    
+    
+    public boolean RemoveSubject(String predmet){
+        
+        
+        int pamti =-1;
+        if(listOfSubjects.size()==1){
+            System.out.println("Student mora imati bar jedan predmet!!!");
+            return true;
+        }
+        
+        for (int i = 0; i < listOfSubjects.size(); i++) {
+            if(listOfSubjects.get(i).equals(predmet)){
+                
+                pamti=i;
+            }
+        }
+        
+        if (pamti != -1) {
+            listOfSubjects.remove(pamti);
+            System.out.println("Predmet Izbrisan!");
+            return true;
+        }
+        
+        return false;
+    
+    }
 
 
 
